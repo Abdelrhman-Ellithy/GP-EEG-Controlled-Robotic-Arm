@@ -1,0 +1,11 @@
+../Src/MCAL/UART_Program.c:14:6:UART_Init	4	static
+../Src/MCAL/UART_Program.c:63:6:UART_SendByte	16	static
+../Src/MCAL/UART_Program.c:74:6:UART_SendString	24	static
+../Src/MCAL/UART_Program.c:91:6:UART_SendStream	16	static
+../Src/MCAL/UART_Program.c:107:6:UART_ReceiveByte	24	static
+../Src/MCAL/UART_Program.c:131:6:UART_ReceiveString	24	static
+../Src/MCAL/UART_Program.c:150:6:UART_ReceiveStream	16	static
+../Src/MCAL/UART_Program.c:164:6:UART_SetCallBack	16	static
+../Src/MCAL/UART_Program.c:173:6:USART1_IRQHandler	8	static
+../Src/MCAL/UART_Program.c:182:6:USART2_IRQHandler	8	static
+../Src/MCAL/UART_Program.c:191:6:USART3_IRQHandler	8	static

@@ -1,0 +1,7 @@
+../Src/MCAL/TIMER1_program.c:22:6:TIMER1_Init	16	static
+../Src/MCAL/TIMER1_program.c:30:6:TIMER1_InitPwmChannel	16	static
+../Src/MCAL/TIMER1_program.c:70:6:TIMER1_SetPWM_FREQ	72	static
+../Src/MCAL/TIMER1_program.c:94:6:TIMER1_SetFREQ	40	static
+../Src/MCAL/TIMER1_program.c:104:6:TIMER1_Set_CRR_Value	16	static
+../Src/MCAL/TIMER1_program.c:148:6:TIMER1_Stop	4	static
+../Src/MCAL/TIMER1_program.c:160:6:TIM1_UP_IRQHandler	8	static

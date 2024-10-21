@@ -1,0 +1,9 @@
+../Src/MCAL/GPIO_program.c:22:6:GPIO_HIGH_2Nibble_Write	16	static
+../Src/MCAL/GPIO_program.c:27:6:GPIO_LOW_2Nibble_Write	16	static
+../Src/MCAL/GPIO_program.c:31:6:GPIO_Nibble_Write	16	static
+../Src/MCAL/GPIO_program.c:37:6:GPIO_PORT_voidInit	16	static
+../Src/MCAL/GPIO_program.c:98:6:GPIO_SetPinMode	24	static
+../Src/MCAL/GPIO_program.c:147:6:GPIO_WritePinValue	16	static
+../Src/MCAL/GPIO_program.c:164:6:GPIO_GetPinValue	16	static
+../Src/MCAL/GPIO_program.c:174:6:GPIO_TogPinValue	16	static
+../Src/MCAL/GPIO_program.c:185:6:GPIO_LockPort	16	static

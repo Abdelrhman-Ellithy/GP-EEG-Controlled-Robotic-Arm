@@ -1,0 +1,8 @@
+../Src/MCAL/SYSTICK_program.c:18:6:SysTKInit	3
+../Src/MCAL/SYSTICK_program.c:26:6:SysTKSetmSBusyWait	1
+../Src/MCAL/SYSTICK_program.c:31:6:SysTKSetIntervalSingle	4
+../Src/MCAL/SYSTICK_program.c:59:6:SysTKSetIntervalPeriodic	4
+../Src/MCAL/SYSTICK_program.c:87:6:SysTKStop	1
+../Src/MCAL/SYSTICK_program.c:91:6:SysTKGetElapsedTime	1
+../Src/MCAL/SYSTICK_program.c:94:6:SysTKGetRemainingTime	1
+../Src/MCAL/SYSTICK_program.c:97:6:SysTick_Handler	3

@@ -1,0 +1,4 @@
+../Src/HAL/Buzzer_Program.c:8:6:BUZZER_voidInit	1
+../Src/HAL/Buzzer_Program.c:11:6:BUZZER_voidON	3
+../Src/HAL/Buzzer_Program.c:23:6:BUZZER_voidOFF	3
+../Src/HAL/Buzzer_Program.c:34:6:BUZZER_voidToggle	1

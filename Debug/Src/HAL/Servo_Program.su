@@ -1,0 +1,2 @@
+../Src/HAL/Servo_Program.c:8:6:SERVO_Init	16	static
+../Src/HAL/Servo_Program.c:14:6:Servo_setAngle	24	static

@@ -1,0 +1,4 @@
+../Src/HAL/LED_Program.c:8:6:LED_voidInit	16	static
+../Src/HAL/LED_Program.c:11:6:LED_voidON	16	static
+../Src/HAL/LED_Program.c:23:6:LED_voidOFF	16	static
+../Src/HAL/LED_Program.c:34:6:LED_voidToggle	16	static
