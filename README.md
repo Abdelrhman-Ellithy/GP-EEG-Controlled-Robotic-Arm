@@ -7,7 +7,7 @@ This project showcases the development of an **EEG-controlled 4DOF Robotic Arm**
 - 🦾 **4 Degrees of Freedom (DOF)** Robotic Arm controlled by EEG signals.
 - 💻 **STM32F103C8T6** microcontroller (Blue Pill) for handling motor control and sensor interfacing.
 - 🧩 Modular design with separate layers for **HAL** (Hardware Abstraction Layer), **MCAL** (Microcontroller Abstraction Layer), and **LIB** (Utility Libraries).
-- ⚙️ Control peripherals like **Servo Motors**, **DC Motors**, **LCD**, **LED**, **Keypad**, **Buzzer**, and **Button** modules.
+- ⚙️ Control peripherals like **Servo Motors**, **DMA**, **Timer1**, **NVIC**, **UART**, **RCC**, and **GPIO** modules.
 - 💾 Embedded software development with **C** programming language.
 
 ## Project Structure
