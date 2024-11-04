@@ -19,21 +19,57 @@
 #include "HAL/Servo/Servo_Interface.h"
 #include "LIB/ellithy_delay.h"
 #include "MCAL/DMA/DMA_interface.h"
-u8 servoAngle;
-void controlServos(){
-	switch(servoAngle){
-	case '0': servoAngle=0;break;
-	case '1': servoAngle=45;break;
-	case '2': servoAngle=63;break;
-	case '3': servoAngle=90;break;
-	case '4': servoAngle=135;break;
-	case '5': servoAngle=180;break;
-	}
-		Servo_setAngle(SERVO_1, servoAngle);
-		Servo_setAngle(SERVO_2, servoAngle);
-		Servo_setAngle(SERVO_3, servoAngle);
-		Servo_setAngle(SERVO_4, servoAngle);
-}
+
+/*
+ * Movements
+ */
+#define GRAB '1'
+#define RELEASE '2'
+#define UP '3'
+#define DOWN '4'
+#define RIGHT_MOST '5'
+#define LEFT_MOST '6'
+#define INIT_STATE '7'
+
+/*
+ *Angles I mesured,maybe modifed latter after Test
+ */
+
+#define BACK_MOST_ANGLE 50
+#define FORWARD_MOST_ANGLE 130
+
+#define RIGHT_MOST_ANGLE 0
+#define LEFT_MOST_ANGLE 160
+
+#define DOWN_MOST_ANGLE 10
+#define UP_MOST_ANGLE 120
+
+#define RELEASE_MOST_ANGLE 10
+#define GRAB_MOST_ANGLE 120
+
+
+ /* Servo Motors */
+
+#define Servo_RIGHT_LIFT_Rotation 	SERVO_1 // PA8
+#define Servo_FORWARD_BACKWARD 		SERVO_2 // PA9
+#define Servo_UP_DOWN		 		SERVO_3 // PA10
+#define Servo_GRABBER 				SERVO_4 // PA11
+
+volatile u8 EEG_CMD,
+			arrServoLastValue[4];
+
+void solveCMD();
+void grab();
+void release();
+void moveUp();
+void moveDown();
+void rotateLeft();
+void rotateRight();
+void returnToInitialState();
+
+//delay for smooth movements
+void setAngle(ServoID_t servo_ID, u8 angle);
+
 int main(void)
 {
 		RCC_InitSysClk();
@@ -60,12 +96,77 @@ int main(void)
 							DMA_TC_INT_ENABLE,
 							circular
 							);
-		DMA_SetCallBack(DMA_CHANNEL6, controlServos);
-		DMA_ChannelTransfer(DMA_CHANNEL6,(u32)&servoAngle,(u32)DMA_Recieve_UART2_CH6,1);
+		DMA_SetCallBack(DMA_CHANNEL6, solveCMD);
+		DMA_ChannelTransfer(DMA_CHANNEL6,(u32)&EEG_CMD,(u32)DMA_Recieve_UART2_CH6,1);
 		DMA_void_DMA_Enable(DMA_CHANNEL6);
 		NVIC_EnableInterrupt(NVIC_DMA1_CHANNEL6);
 		NVIC_EnableInterrupt(NVIC_USART2);
+		EEG_CMD=INIT_STATE;
+		solveCMD();
 		while(1){
 
 		}
+}
+
+void solveCMD() {
+  switch (EEG_CMD) {
+    case GRAB: grab(); break;
+    case RELEASE: release(); break;
+    case UP: moveUp(); break;
+    case DOWN: moveDown(); break;
+    case RIGHT_MOST: rotateRight(); break;
+    case LEFT_MOST: rotateLeft(); break;
+    case INIT_STATE: returnToInitialState(); break;
+    default: break;
+  }
+}
+void moveUp() {
+	Servo_setAngle(Servo_UP_DOWN, UP_MOST_ANGLE);
+	Servo_setAngle(Servo_FORWARD_BACKWARD, BACK_MOST_ANGLE);
+}
+
+void moveDown() {
+	Servo_setAngle(Servo_UP_DOWN, DOWN_MOST_ANGLE);
+	setAngle(Servo_FORWARD_BACKWARD, FORWARD_MOST_ANGLE);
+}
+
+void grab() {
+	Servo_setAngle(Servo_GRABBER, GRAB_MOST_ANGLE);
+}
+
+void release() {
+	Servo_setAngle(Servo_GRABBER, RELEASE_MOST_ANGLE);
+}
+
+void rotateLeft() {
+	Servo_setAngle(Servo_RIGHT_LIFT_Rotation, LEFT_MOST_ANGLE);
+}
+
+void rotateRight() {
+	Servo_setAngle(Servo_RIGHT_LIFT_Rotation, RIGHT_MOST_ANGLE);
+}
+
+void returnToInitialState() {
+	Servo_setAngle(Servo_RIGHT_LIFT_Rotation, (RIGHT_MOST_ANGLE + LEFT_MOST_ANGLE) / 2);
+	Servo_setAngle(Servo_GRABBER, RELEASE_MOST_ANGLE);
+	Servo_setAngle(Servo_FORWARD_BACKWARD, (FORWARD_MOST_ANGLE + BACK_MOST_ANGLE) / 2);
+	Servo_setAngle(Servo_UP_DOWN, (UP_MOST_ANGLE + DOWN_MOST_ANGLE) / 2);
+}
+
+void setAngle(ServoID_t servo_ID, u8 targetAngle) {
+
+  u8 currentAngle = arrServoLastValue[servo_ID];
+  if (currentAngle == targetAngle){
+	  return;
+  }
+  else {
+	  arrServoLastValue[servo_ID]=currentAngle;
+	  s8 step = (targetAngle > currentAngle) ? 1 : -1;
+	  for (u8 angle = currentAngle; angle != targetAngle; angle += step) {
+		  Servo_setAngle(servo_ID,angle);
+	      _delay_ms(1);
+	  }
+	  Servo_setAngle(servo_ID,targetAngle);
+	  return;
+  }
 }

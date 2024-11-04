@@ -52,7 +52,7 @@
 *******************************************************************************/
 #if (RCC_CLK_SYS == RCC_HSE)
 
-	#define RCC_HSE_TYPE			RCC_HSE_NOT_BYPASS
+	#define RCC_HSE_TYPE			RCC_u8_HSE_NOT_BYPASS
 
 #endif
 

@@ -1,0 +1,8 @@
+../Src/HAL/CLCD_program.c:323:13:CLCD_voidSendFallingEdge	1
+../Src/HAL/CLCD_program.c:88:6:CLCD_voidSendData	1
+../Src/HAL/CLCD_program.c:122:6:CLCD_voidSendCommand	1
+../Src/HAL/CLCD_program.c:157:6:CLCD_voidSendString	2
+../Src/HAL/CLCD_program.c:177:6:CLCD_voidSendNumber	4
+../Src/HAL/CLCD_program.c:214:6:CLCD_voidSetPosition	4
+../Src/HAL/CLCD_program.c:306:6:CLCD_voidClearScreen	1
+../Src/HAL/CLCD_program.c:25:6:CLCD_voidInit	1

@@ -1,0 +1,2 @@
+../Src/MCAL/RCC_program.c:16:6:RCC_InitSysClk	1
+../Src/MCAL/RCC_program.c:79:6:RCC_PeripheralClk	10

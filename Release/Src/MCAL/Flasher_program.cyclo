@@ -1,0 +1,5 @@
+../Src/MCAL/Flasher_program.c:12:6:Flash_Init	1
+../Src/MCAL/Flasher_program.c:26:4:Flash_PageErase	5
+../Src/MCAL/Flasher_program.c:17:6:Flash_EraseAppArea	2
+../Src/MCAL/Flasher_program.c:60:4:Flash_Write	7
+../Src/MCAL/Flasher_program.c:100:6:Flash_Read	2

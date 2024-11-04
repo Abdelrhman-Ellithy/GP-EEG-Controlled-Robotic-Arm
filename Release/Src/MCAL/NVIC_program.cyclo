@@ -1,0 +1,7 @@
+../Src/MCAL/NVIC_program.c:19:6:NVIC_Init	1
+../Src/MCAL/NVIC_program.c:24:6:NVIC_EnableInterrupt	2
+../Src/MCAL/NVIC_program.c:38:6:NVIC_DisableInterrupt	2
+../Src/MCAL/NVIC_program.c:52:6:NVIC_SetInterruptPending	2
+../Src/MCAL/NVIC_program.c:67:6:NVIC_SClearInterruptPending	2
+../Src/MCAL/NVIC_program.c:82:6:NVIC_SetGroupPriority	1
+../Src/MCAL/NVIC_program.c:88:6:NVIC_GenerateSWInerrupt	1

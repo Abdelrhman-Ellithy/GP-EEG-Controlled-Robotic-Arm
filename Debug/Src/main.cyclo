@@ -1,2 +1,10 @@
-../Src/main.c:23:6:controlServos	7
-../Src/main.c:37:5:main	1
+../Src/main.c:73:5:main	1
+../Src/main.c:111:6:solveCMD	8
+../Src/main.c:123:6:moveUp	1
+../Src/main.c:128:6:moveDown	1
+../Src/main.c:133:6:grab	1
+../Src/main.c:137:6:release	1
+../Src/main.c:141:6:rotateLeft	1
+../Src/main.c:145:6:rotateRight	1
+../Src/main.c:149:6:returnToInitialState	1
+../Src/main.c:156:6:setAngle	4

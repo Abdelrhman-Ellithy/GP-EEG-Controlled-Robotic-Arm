@@ -1,0 +1,4 @@
+../Src/MCAL/AFIO_program.c:16:6:AFIO_SetTIMERConfiguration	0	static
+../Src/MCAL/AFIO_program.c:25:6:AFIO_EXTI_Port_Source	8	static
+../Src/MCAL/AFIO_program.c:39:6:AFIO_DisableJTAG	0	static
+../Src/MCAL/AFIO_program.c:49:6:AFIO_SetUARTConfiguration	0	static

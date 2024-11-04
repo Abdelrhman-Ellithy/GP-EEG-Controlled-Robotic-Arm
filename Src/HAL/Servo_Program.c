@@ -8,6 +8,7 @@
 void SERVO_Init(ServoID_t  servo){
 	TIMER1_InitPwmChannel(servo);
 	TIMER1_SetFREQ(servo,SERVO_FREQUENCY);
+	TIMER1_SetARRValue(39999);
 	Servo_setAngle(servo,0);
 }
 

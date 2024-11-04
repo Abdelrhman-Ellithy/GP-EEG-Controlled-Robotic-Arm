@@ -1,0 +1,2 @@
+../Src/ellithy_dalay.c:12:6:_delay_ms	0	static,ignoring_inline_asm
+../Src/ellithy_dalay.c:23:6:_delay_us	0	static,ignoring_inline_asm

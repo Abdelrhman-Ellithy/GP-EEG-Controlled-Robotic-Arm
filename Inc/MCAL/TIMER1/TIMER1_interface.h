@@ -37,6 +37,8 @@ typedef enum{
 
 }ICU_EDGE;
 
+void TIMER1_SetARRValue( u16 ARR_Value);
+
 void TIMER1_SetFREQ(PWM_CHANNEL Copy_PwmChannel , u32 Copy_PwmFrequency);
 
 void TIMER1_Set_CRR_Value(PWM_CHANNEL Copy_PwmChannel , u16 Copy_Value );

@@ -1,0 +1,2 @@
+../Src/MCAL/RCC_program.c:16:6:RCC_InitSysClk	0	static
+../Src/MCAL/RCC_program.c:79:6:RCC_PeripheralClk	0	static

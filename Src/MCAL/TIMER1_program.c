@@ -101,6 +101,15 @@ void TIMER1_SetFREQ(PWM_CHANNEL Copy_PwmChannel , u32 Copy_PwmFrequency)
 	    }
 
 }
+void TIMER1_SetARRValue( u16 ARR_Value)
+{
+	    if(ARR_Value< 65536){
+			TIMER1->ARR = ARR_Value ; 																						/* Setup Frequency */
+			//SET_BIT(TIMER1->BDTR,15); 																						/* Enable MOE */
+			//SET_BIT(TIMER1->CR1,0); 																						/* Enable the timer */
+	    }
+
+}
 void TIMER1_Set_CRR_Value(PWM_CHANNEL Copy_PwmChannel , u16 Copy_Value )
 {
 	if( Copy_Value < 65536)
