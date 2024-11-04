@@ -115,11 +115,7 @@ Graduation_Project_Robotic_Arm
 
 - 🔌 **Microcontroller**: STM32F103C8T6 (Blue Pill)
 - 🧠 **EEG Sensor**: Captures EEG signals and sends commands to control the robotic arm.
-- 🦿 **Servo Motors**: For movement of the robotic arm joints.
-- 🔄 **DC Motor**: For base rotation of the robotic arm.
-- 📟 **LCD**: Displays information to the user.
-- 🔢 **Keypad**: Provides manual input control.
-- 🔔 **Buzzer/LED**: Used for notifications.
+- 🔄 **Servo Motors**: For base rotation of the robotic arm.
 
 ## 🧑‍💻 How to Build and Run
 
