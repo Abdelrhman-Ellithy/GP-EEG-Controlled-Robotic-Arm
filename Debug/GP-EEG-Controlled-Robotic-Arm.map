@@ -39,7 +39,7 @@ C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.external
 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-sbrkr.o)
                               C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-mallocr.o) (_sbrk_r)
 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_uldivmod.o)
-                              ./Src/HAL/CLCD_program.o (__aeabi_uldivmod)
+                              ./Src/MCAL/TIMER1_program.o (__aeabi_uldivmod)
 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
                               C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_uldivmod.o) (__udivmoddi4)
 C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
@@ -67,192 +67,6 @@ Discarded input sections
  .debug_str     0x0000000000000000       0xde C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
  .ARM.attributes
                 0x0000000000000000       0x1b C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
- .group         0x0000000000000000        0xc ./Src/HAL/Button_progaram.o
- .group         0x0000000000000000        0xc ./Src/HAL/Button_progaram.o
- .group         0x0000000000000000        0xc ./Src/HAL/Button_progaram.o
- .group         0x0000000000000000        0xc ./Src/HAL/Button_progaram.o
- .text          0x0000000000000000        0x0 ./Src/HAL/Button_progaram.o
- .data          0x0000000000000000        0x0 ./Src/HAL/Button_progaram.o
- .bss           0x0000000000000000        0x0 ./Src/HAL/Button_progaram.o
- .text.Button_read
-                0x0000000000000000       0x9e ./Src/HAL/Button_progaram.o
- .debug_info    0x0000000000000000      0x136 ./Src/HAL/Button_progaram.o
- .debug_abbrev  0x0000000000000000       0xd2 ./Src/HAL/Button_progaram.o
- .debug_aranges
-                0x0000000000000000       0x20 ./Src/HAL/Button_progaram.o
- .debug_rnglists
-                0x0000000000000000       0x14 ./Src/HAL/Button_progaram.o
- .debug_macro   0x0000000000000000       0x3c ./Src/HAL/Button_progaram.o
- .debug_macro   0x0000000000000000      0xaa2 ./Src/HAL/Button_progaram.o
- .debug_macro   0x0000000000000000       0x40 ./Src/HAL/Button_progaram.o
- .debug_macro   0x0000000000000000       0x22 ./Src/HAL/Button_progaram.o
- .debug_macro   0x0000000000000000       0xee ./Src/HAL/Button_progaram.o
- .debug_line    0x0000000000000000      0x10d ./Src/HAL/Button_progaram.o
- .debug_str     0x0000000000000000     0x3277 ./Src/HAL/Button_progaram.o
- .comment       0x0000000000000000       0x44 ./Src/HAL/Button_progaram.o
- .debug_frame   0x0000000000000000       0x34 ./Src/HAL/Button_progaram.o
- .ARM.attributes
-                0x0000000000000000       0x2d ./Src/HAL/Button_progaram.o
- .group         0x0000000000000000        0xc ./Src/HAL/Buzzer_Program.o
- .group         0x0000000000000000        0xc ./Src/HAL/Buzzer_Program.o
- .group         0x0000000000000000        0xc ./Src/HAL/Buzzer_Program.o
- .text          0x0000000000000000        0x0 ./Src/HAL/Buzzer_Program.o
- .data          0x0000000000000000        0x0 ./Src/HAL/Buzzer_Program.o
- .bss           0x0000000000000000        0x0 ./Src/HAL/Buzzer_Program.o
- .text.BUZZER_voidInit
-                0x0000000000000000       0x20 ./Src/HAL/Buzzer_Program.o
- .text.BUZZER_voidON
-                0x0000000000000000       0x40 ./Src/HAL/Buzzer_Program.o
- .text.BUZZER_voidOFF
-                0x0000000000000000       0x40 ./Src/HAL/Buzzer_Program.o
- .text.BUZZER_voidToggle
-                0x0000000000000000       0x20 ./Src/HAL/Buzzer_Program.o
- .debug_info    0x0000000000000000      0x1b2 ./Src/HAL/Buzzer_Program.o
- .debug_abbrev  0x0000000000000000       0xed ./Src/HAL/Buzzer_Program.o
- .debug_aranges
-                0x0000000000000000       0x38 ./Src/HAL/Buzzer_Program.o
- .debug_rnglists
-                0x0000000000000000       0x25 ./Src/HAL/Buzzer_Program.o
- .debug_macro   0x0000000000000000       0x33 ./Src/HAL/Buzzer_Program.o
- .debug_macro   0x0000000000000000      0xaa2 ./Src/HAL/Buzzer_Program.o
- .debug_macro   0x0000000000000000       0x22 ./Src/HAL/Buzzer_Program.o
- .debug_macro   0x0000000000000000       0xee ./Src/HAL/Buzzer_Program.o
- .debug_line    0x0000000000000000      0x117 ./Src/HAL/Buzzer_Program.o
- .debug_str     0x0000000000000000     0x3261 ./Src/HAL/Buzzer_Program.o
- .comment       0x0000000000000000       0x44 ./Src/HAL/Buzzer_Program.o
- .debug_frame   0x0000000000000000       0xa0 ./Src/HAL/Buzzer_Program.o
- .ARM.attributes
-                0x0000000000000000       0x2d ./Src/HAL/Buzzer_Program.o
- .group         0x0000000000000000        0xc ./Src/HAL/CLCD_program.o
- .group         0x0000000000000000        0xc ./Src/HAL/CLCD_program.o
- .group         0x0000000000000000        0xc ./Src/HAL/CLCD_program.o
- .group         0x0000000000000000        0xc ./Src/HAL/CLCD_program.o
- .group         0x0000000000000000        0xc ./Src/HAL/CLCD_program.o
- .group         0x0000000000000000        0xc ./Src/HAL/CLCD_program.o
- .text          0x0000000000000000        0x0 ./Src/HAL/CLCD_program.o
- .data          0x0000000000000000        0x0 ./Src/HAL/CLCD_program.o
- .bss           0x0000000000000000        0x0 ./Src/HAL/CLCD_program.o
- .text.CLCD_voidInit
-                0x0000000000000000       0x42 ./Src/HAL/CLCD_program.o
- .text.CLCD_voidSendData
-                0x0000000000000000       0x4c ./Src/HAL/CLCD_program.o
- .text.CLCD_voidSendCommand
-                0x0000000000000000       0x4c ./Src/HAL/CLCD_program.o
- .text.CLCD_voidSendString
-                0x0000000000000000       0x38 ./Src/HAL/CLCD_program.o
- .text.CLCD_voidSendNumber
-                0x0000000000000000       0xe4 ./Src/HAL/CLCD_program.o
- .text.CLCD_voidSetPosition
-                0x0000000000000000       0x5e ./Src/HAL/CLCD_program.o
- .text.CLCD_voidClearScreen
-                0x0000000000000000       0x20 ./Src/HAL/CLCD_program.o
- .text.CLCD_voidSendFallingEdge
-                0x0000000000000000       0x28 ./Src/HAL/CLCD_program.o
- .debug_info    0x0000000000000000      0x276 ./Src/HAL/CLCD_program.o
- .debug_abbrev  0x0000000000000000      0x14d ./Src/HAL/CLCD_program.o
- .debug_aranges
-                0x0000000000000000       0x58 ./Src/HAL/CLCD_program.o
- .debug_rnglists
-                0x0000000000000000       0x3e ./Src/HAL/CLCD_program.o
- .debug_macro   0x0000000000000000       0x4e ./Src/HAL/CLCD_program.o
- .debug_macro   0x0000000000000000      0xaa2 ./Src/HAL/CLCD_program.o
- .debug_macro   0x0000000000000000       0x1c ./Src/HAL/CLCD_program.o
- .debug_macro   0x0000000000000000       0x22 ./Src/HAL/CLCD_program.o
- .debug_macro   0x0000000000000000       0xee ./Src/HAL/CLCD_program.o
- .debug_macro   0x0000000000000000       0x52 ./Src/HAL/CLCD_program.o
- .debug_macro   0x0000000000000000       0xb8 ./Src/HAL/CLCD_program.o
- .debug_line    0x0000000000000000      0x223 ./Src/HAL/CLCD_program.o
- .debug_str     0x0000000000000000     0x367a ./Src/HAL/CLCD_program.o
- .comment       0x0000000000000000       0x44 ./Src/HAL/CLCD_program.o
- .debug_frame   0x0000000000000000      0x124 ./Src/HAL/CLCD_program.o
- .ARM.attributes
-                0x0000000000000000       0x2d ./Src/HAL/CLCD_program.o
- .group         0x0000000000000000        0xc ./Src/HAL/DCMOTOR_program.o
- .group         0x0000000000000000        0xc ./Src/HAL/DCMOTOR_program.o
- .group         0x0000000000000000        0xc ./Src/HAL/DCMOTOR_program.o
- .group         0x0000000000000000        0xc ./Src/HAL/DCMOTOR_program.o
- .text          0x0000000000000000        0x0 ./Src/HAL/DCMOTOR_program.o
- .data          0x0000000000000000        0x0 ./Src/HAL/DCMOTOR_program.o
- .bss           0x0000000000000000        0x0 ./Src/HAL/DCMOTOR_program.o
- .text.DCMOTOR_Control
-                0x0000000000000000       0x8c ./Src/HAL/DCMOTOR_program.o
- .debug_info    0x0000000000000000      0x135 ./Src/HAL/DCMOTOR_program.o
- .debug_abbrev  0x0000000000000000       0xce ./Src/HAL/DCMOTOR_program.o
- .debug_aranges
-                0x0000000000000000       0x20 ./Src/HAL/DCMOTOR_program.o
- .debug_rnglists
-                0x0000000000000000       0x14 ./Src/HAL/DCMOTOR_program.o
- .debug_macro   0x0000000000000000       0x3c ./Src/HAL/DCMOTOR_program.o
- .debug_macro   0x0000000000000000      0xaa2 ./Src/HAL/DCMOTOR_program.o
- .debug_macro   0x0000000000000000       0x76 ./Src/HAL/DCMOTOR_program.o
- .debug_macro   0x0000000000000000       0x22 ./Src/HAL/DCMOTOR_program.o
- .debug_macro   0x0000000000000000       0xee ./Src/HAL/DCMOTOR_program.o
- .debug_line    0x0000000000000000       0xe7 ./Src/HAL/DCMOTOR_program.o
- .debug_str     0x0000000000000000     0x349d ./Src/HAL/DCMOTOR_program.o
- .comment       0x0000000000000000       0x44 ./Src/HAL/DCMOTOR_program.o
- .debug_frame   0x0000000000000000       0x34 ./Src/HAL/DCMOTOR_program.o
- .ARM.attributes
-                0x0000000000000000       0x2d ./Src/HAL/DCMOTOR_program.o
- .group         0x0000000000000000        0xc ./Src/HAL/Keypad_Program.o
- .group         0x0000000000000000        0xc ./Src/HAL/Keypad_Program.o
- .group         0x0000000000000000        0xc ./Src/HAL/Keypad_Program.o
- .group         0x0000000000000000        0xc ./Src/HAL/Keypad_Program.o
- .group         0x0000000000000000        0xc ./Src/HAL/Keypad_Program.o
- .text          0x0000000000000000        0x0 ./Src/HAL/Keypad_Program.o
- .data          0x0000000000000000        0x0 ./Src/HAL/Keypad_Program.o
- .bss           0x0000000000000000        0x0 ./Src/HAL/Keypad_Program.o
- .data.keypad_Buttons
-                0x0000000000000000       0x10 ./Src/HAL/Keypad_Program.o
- .text.Get_pressed
-                0x0000000000000000       0x94 ./Src/HAL/Keypad_Program.o
- .debug_info    0x0000000000000000      0x133 ./Src/HAL/Keypad_Program.o
- .debug_abbrev  0x0000000000000000       0xbb ./Src/HAL/Keypad_Program.o
- .debug_aranges
-                0x0000000000000000       0x20 ./Src/HAL/Keypad_Program.o
- .debug_rnglists
-                0x0000000000000000       0x14 ./Src/HAL/Keypad_Program.o
- .debug_macro   0x0000000000000000       0x5b ./Src/HAL/Keypad_Program.o
- .debug_macro   0x0000000000000000      0xaa2 ./Src/HAL/Keypad_Program.o
- .debug_macro   0x0000000000000000       0x22 ./Src/HAL/Keypad_Program.o
- .debug_macro   0x0000000000000000       0xee ./Src/HAL/Keypad_Program.o
- .debug_macro   0x0000000000000000       0x40 ./Src/HAL/Keypad_Program.o
- .debug_macro   0x0000000000000000       0x40 ./Src/HAL/Keypad_Program.o
- .debug_line    0x0000000000000000      0x145 ./Src/HAL/Keypad_Program.o
- .debug_str     0x0000000000000000     0x333e ./Src/HAL/Keypad_Program.o
- .comment       0x0000000000000000       0x44 ./Src/HAL/Keypad_Program.o
- .debug_frame   0x0000000000000000       0x34 ./Src/HAL/Keypad_Program.o
- .ARM.attributes
-                0x0000000000000000       0x2d ./Src/HAL/Keypad_Program.o
- .group         0x0000000000000000        0xc ./Src/HAL/LED_Program.o
- .group         0x0000000000000000        0xc ./Src/HAL/LED_Program.o
- .group         0x0000000000000000        0xc ./Src/HAL/LED_Program.o
- .text          0x0000000000000000        0x0 ./Src/HAL/LED_Program.o
- .data          0x0000000000000000        0x0 ./Src/HAL/LED_Program.o
- .bss           0x0000000000000000        0x0 ./Src/HAL/LED_Program.o
- .text.LED_voidInit
-                0x0000000000000000       0x20 ./Src/HAL/LED_Program.o
- .text.LED_voidON
-                0x0000000000000000       0x40 ./Src/HAL/LED_Program.o
- .text.LED_voidOFF
-                0x0000000000000000       0x40 ./Src/HAL/LED_Program.o
- .text.LED_voidToggle
-                0x0000000000000000       0x20 ./Src/HAL/LED_Program.o
- .debug_info    0x0000000000000000      0x1b6 ./Src/HAL/LED_Program.o
- .debug_abbrev  0x0000000000000000       0xeb ./Src/HAL/LED_Program.o
- .debug_aranges
-                0x0000000000000000       0x38 ./Src/HAL/LED_Program.o
- .debug_rnglists
-                0x0000000000000000       0x25 ./Src/HAL/LED_Program.o
- .debug_macro   0x0000000000000000       0x33 ./Src/HAL/LED_Program.o
- .debug_macro   0x0000000000000000      0xaa2 ./Src/HAL/LED_Program.o
- .debug_macro   0x0000000000000000       0x22 ./Src/HAL/LED_Program.o
- .debug_macro   0x0000000000000000       0xee ./Src/HAL/LED_Program.o
- .debug_line    0x0000000000000000      0x10e ./Src/HAL/LED_Program.o
- .debug_str     0x0000000000000000     0x323f ./Src/HAL/LED_Program.o
- .comment       0x0000000000000000       0x44 ./Src/HAL/LED_Program.o
- .debug_frame   0x0000000000000000       0xa0 ./Src/HAL/LED_Program.o
- .ARM.attributes
-                0x0000000000000000       0x2d ./Src/HAL/LED_Program.o
  .group         0x0000000000000000        0xc ./Src/HAL/Servo_Program.o
  .group         0x0000000000000000        0xc ./Src/HAL/Servo_Program.o
  .group         0x0000000000000000        0xc ./Src/HAL/Servo_Program.o
@@ -260,9 +74,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./Src/HAL/Servo_Program.o
  .data          0x0000000000000000        0x0 ./Src/HAL/Servo_Program.o
  .bss           0x0000000000000000        0x0 ./Src/HAL/Servo_Program.o
- .debug_macro   0x0000000000000000      0xaa2 ./Src/HAL/Servo_Program.o
- .debug_macro   0x0000000000000000       0x22 ./Src/HAL/Servo_Program.o
- .debug_macro   0x0000000000000000       0xee ./Src/HAL/Servo_Program.o
  .group         0x0000000000000000        0xc ./Src/MCAL/ADC_program.o
  .group         0x0000000000000000        0xc ./Src/MCAL/ADC_program.o
  .group         0x0000000000000000        0xc ./Src/MCAL/ADC_program.o
@@ -573,9 +384,6 @@ Discarded input sections
  .group         0x0000000000000000        0xc ./Src/MCAL/TIMER1_program.o
  .group         0x0000000000000000        0xc ./Src/MCAL/TIMER1_program.o
  .group         0x0000000000000000        0xc ./Src/MCAL/TIMER1_program.o
- .group         0x0000000000000000        0xc ./Src/MCAL/TIMER1_program.o
- .group         0x0000000000000000        0xc ./Src/MCAL/TIMER1_program.o
- .group         0x0000000000000000        0xc ./Src/MCAL/TIMER1_program.o
  .text          0x0000000000000000        0x0 ./Src/MCAL/TIMER1_program.o
  .data          0x0000000000000000        0x0 ./Src/MCAL/TIMER1_program.o
  .bss           0x0000000000000000        0x0 ./Src/MCAL/TIMER1_program.o
@@ -587,8 +395,6 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x22 ./Src/MCAL/TIMER1_program.o
  .debug_macro   0x0000000000000000       0x3a ./Src/MCAL/TIMER1_program.o
  .debug_macro   0x0000000000000000      0x1f9 ./Src/MCAL/TIMER1_program.o
- .debug_macro   0x0000000000000000       0xf4 ./Src/MCAL/TIMER1_program.o
- .debug_macro   0x0000000000000000       0x52 ./Src/MCAL/TIMER1_program.o
  .group         0x0000000000000000        0xc ./Src/MCAL/UART_Program.o
  .group         0x0000000000000000        0xc ./Src/MCAL/UART_Program.o
  .group         0x0000000000000000        0xc ./Src/MCAL/UART_Program.o
@@ -1090,12 +896,6 @@ Linker script and memory map
 LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7-m/nofp/crti.o
 LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/thumb/v7-m/nofp/crtbegin.o
 LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
-LOAD ./Src/HAL/Button_progaram.o
-LOAD ./Src/HAL/Buzzer_Program.o
-LOAD ./Src/HAL/CLCD_program.o
-LOAD ./Src/HAL/DCMOTOR_program.o
-LOAD ./Src/HAL/Keypad_Program.o
-LOAD ./Src/HAL/LED_Program.o
 LOAD ./Src/HAL/Servo_Program.o
 LOAD ./Src/MCAL/ADC_program.o
 LOAD ./Src/MCAL/AFIO_program.o
@@ -1655,33 +1455,35 @@ LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x000000000000029d       0x19 ./Startup/startup_stm32f103c8tx.o
 
-.debug_macro    0x0000000000000000      0x8dc
+.debug_macro    0x0000000000000000     0x139d
  .debug_macro   0x0000000000000000       0x50 ./Src/HAL/Servo_Program.o
- .debug_macro   0x0000000000000050       0x10 ./Src/HAL/Servo_Program.o
- .debug_macro   0x0000000000000060       0x52 ./Src/MCAL/DMA_program.o
- .debug_macro   0x00000000000000b2       0x5e ./Src/MCAL/DMA_program.o
- .debug_macro   0x0000000000000110       0x4a ./Src/MCAL/EXTI_program.o
- .debug_macro   0x000000000000015a       0x58 ./Src/MCAL/GPIO_program.o
- .debug_macro   0x00000000000001b2       0xf4 ./Src/MCAL/GPIO_program.o
- .debug_macro   0x00000000000002a6       0x2e ./Src/MCAL/GPIO_program.o
- .debug_macro   0x00000000000002d4       0x52 ./Src/MCAL/NVIC_program.o
- .debug_macro   0x0000000000000326       0x22 ./Src/MCAL/NVIC_program.o
- .debug_macro   0x0000000000000348       0x2e ./Src/MCAL/NVIC_program.o
- .debug_macro   0x0000000000000376       0x52 ./Src/MCAL/RCC_program.o
- .debug_macro   0x00000000000003c8      0x100 ./Src/MCAL/RCC_program.o
- .debug_macro   0x00000000000004c8       0x34 ./Src/MCAL/RCC_program.o
- .debug_macro   0x00000000000004fc       0x59 ./Src/MCAL/SYSTICK_program.o
- .debug_macro   0x0000000000000555       0x10 ./Src/MCAL/SYSTICK_program.o
- .debug_macro   0x0000000000000565       0x7b ./Src/MCAL/TIMER1_program.o
- .debug_macro   0x00000000000005e0       0xca ./Src/MCAL/TIMER1_program.o
- .debug_macro   0x00000000000006aa       0x53 ./Src/MCAL/UART_Program.o
- .debug_macro   0x00000000000006fd       0x4c ./Src/MCAL/UART_Program.o
- .debug_macro   0x0000000000000749       0x1e ./Src/ellithy_dalay.o
- .debug_macro   0x0000000000000767       0xfb ./Src/main.o
- .debug_macro   0x0000000000000862       0x22 ./Src/main.o
- .debug_macro   0x0000000000000884       0x58 ./Src/main.o
+ .debug_macro   0x0000000000000050      0xaa2 ./Src/HAL/Servo_Program.o
+ .debug_macro   0x0000000000000af2       0x22 ./Src/HAL/Servo_Program.o
+ .debug_macro   0x0000000000000b14       0xee ./Src/HAL/Servo_Program.o
+ .debug_macro   0x0000000000000c02       0x10 ./Src/HAL/Servo_Program.o
+ .debug_macro   0x0000000000000c12       0x52 ./Src/MCAL/DMA_program.o
+ .debug_macro   0x0000000000000c64       0x5e ./Src/MCAL/DMA_program.o
+ .debug_macro   0x0000000000000cc2       0x4a ./Src/MCAL/EXTI_program.o
+ .debug_macro   0x0000000000000d0c       0x58 ./Src/MCAL/GPIO_program.o
+ .debug_macro   0x0000000000000d64       0xf4 ./Src/MCAL/GPIO_program.o
+ .debug_macro   0x0000000000000e58       0x2e ./Src/MCAL/GPIO_program.o
+ .debug_macro   0x0000000000000e86       0x52 ./Src/MCAL/NVIC_program.o
+ .debug_macro   0x0000000000000ed8       0x22 ./Src/MCAL/NVIC_program.o
+ .debug_macro   0x0000000000000efa       0x2e ./Src/MCAL/NVIC_program.o
+ .debug_macro   0x0000000000000f28       0x52 ./Src/MCAL/RCC_program.o
+ .debug_macro   0x0000000000000f7a      0x100 ./Src/MCAL/RCC_program.o
+ .debug_macro   0x000000000000107a       0x34 ./Src/MCAL/RCC_program.o
+ .debug_macro   0x00000000000010ae       0x59 ./Src/MCAL/SYSTICK_program.o
+ .debug_macro   0x0000000000001107       0x10 ./Src/MCAL/SYSTICK_program.o
+ .debug_macro   0x0000000000001117       0x54 ./Src/MCAL/TIMER1_program.o
+ .debug_macro   0x000000000000116b       0x53 ./Src/MCAL/UART_Program.o
+ .debug_macro   0x00000000000011be       0x4c ./Src/MCAL/UART_Program.o
+ .debug_macro   0x000000000000120a       0x1e ./Src/ellithy_dalay.o
+ .debug_macro   0x0000000000001228       0xfb ./Src/main.o
+ .debug_macro   0x0000000000001323       0x22 ./Src/main.o
+ .debug_macro   0x0000000000001345       0x58 ./Src/main.o
 
-.debug_line     0x0000000000000000     0x1980
+.debug_line     0x0000000000000000     0x1927
  .debug_line    0x0000000000000000      0x12c ./Src/HAL/Servo_Program.o
  .debug_line    0x000000000000012c      0x34e ./Src/MCAL/DMA_program.o
  .debug_line    0x000000000000047a      0x271 ./Src/MCAL/EXTI_program.o
@@ -1689,36 +1491,36 @@ LOAD C:/ST/STM32CubeIDE_1.14.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x0000000000000a1c      0x1d4 ./Src/MCAL/NVIC_program.o
  .debug_line    0x0000000000000bf0      0x157 ./Src/MCAL/RCC_program.o
  .debug_line    0x0000000000000d47      0x21f ./Src/MCAL/SYSTICK_program.o
- .debug_line    0x0000000000000f66      0x2c3 ./Src/MCAL/TIMER1_program.o
- .debug_line    0x0000000000001229      0x2c6 ./Src/MCAL/UART_Program.o
- .debug_line    0x00000000000014ef       0xec ./Src/ellithy_dalay.o
- .debug_line    0x00000000000015db      0x32a ./Src/main.o
- .debug_line    0x0000000000001905       0x7b ./Startup/startup_stm32f103c8tx.o
+ .debug_line    0x0000000000000f66      0x26a ./Src/MCAL/TIMER1_program.o
+ .debug_line    0x00000000000011d0      0x2c6 ./Src/MCAL/UART_Program.o
+ .debug_line    0x0000000000001496       0xec ./Src/ellithy_dalay.o
+ .debug_line    0x0000000000001582      0x32a ./Src/main.o
+ .debug_line    0x00000000000018ac       0x7b ./Startup/startup_stm32f103c8tx.o
 
-.debug_str      0x0000000000000000     0x6a2e
+.debug_str      0x0000000000000000     0x66f2
  .debug_str     0x0000000000000000     0x3259 ./Src/HAL/Servo_Program.o
                                        0x32ef (size before relaxing)
  .debug_str     0x0000000000003259     0x177c ./Src/MCAL/DMA_program.o
                                        0x45e8 (size before relaxing)
  .debug_str     0x00000000000049d5      0x1c8 ./Src/MCAL/EXTI_program.o
                                        0x4103 (size before relaxing)
- .debug_str     0x0000000000004b9d      0x371 ./Src/MCAL/GPIO_program.o
+ .debug_str     0x0000000000004b9d      0x3a7 ./Src/MCAL/GPIO_program.o
                                        0x4356 (size before relaxing)
- .debug_str     0x0000000000004f0e      0x57b ./Src/MCAL/NVIC_program.o
+ .debug_str     0x0000000000004f44      0x57b ./Src/MCAL/NVIC_program.o
                                        0x436b (size before relaxing)
- .debug_str     0x0000000000005489      0x7a8 ./Src/MCAL/RCC_program.o
+ .debug_str     0x00000000000054bf      0x7a8 ./Src/MCAL/RCC_program.o
                                        0x459d (size before relaxing)
- .debug_str     0x0000000000005c31      0x20b ./Src/MCAL/SYSTICK_program.o
+ .debug_str     0x0000000000005c67      0x20b ./Src/MCAL/SYSTICK_program.o
                                        0x4118 (size before relaxing)
- .debug_str     0x0000000000005e3c      0x4d8 ./Src/MCAL/TIMER1_program.o
-                                       0x469d (size before relaxing)
- .debug_str     0x0000000000006314      0x3cb ./Src/MCAL/UART_Program.o
+ .debug_str     0x0000000000005e72      0x166 ./Src/MCAL/TIMER1_program.o
+                                       0x4014 (size before relaxing)
+ .debug_str     0x0000000000005fd8      0x3cb ./Src/MCAL/UART_Program.o
                                        0x434c (size before relaxing)
- .debug_str     0x00000000000066df       0x48 ./Src/ellithy_dalay.o
+ .debug_str     0x00000000000063a3       0x48 ./Src/ellithy_dalay.o
                                        0x2e9a (size before relaxing)
- .debug_str     0x0000000000006727      0x2d8 ./Src/main.o
+ .debug_str     0x00000000000063eb      0x2d8 ./Src/main.o
                                        0x4d36 (size before relaxing)
- .debug_str     0x00000000000069ff       0x2f ./Startup/startup_stm32f103c8tx.o
+ .debug_str     0x00000000000066c3       0x2f ./Startup/startup_stm32f103c8tx.o
                                          0x81 (size before relaxing)
 
 .debug_frame    0x0000000000000000      0xcb8

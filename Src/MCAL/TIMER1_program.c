@@ -15,7 +15,6 @@
 #include "MCAL/TIMER1/TIMER1_interface.h"
 #include "MCAL/TIMER1/TIMER1_private.h"
 #include "MCAL/TIMER1/TIMER1_config.h"
-#include "HAL/LCD/CLCD_interface.h"
 
 static void (*TIMER1_callback)(void) = NULL;
 

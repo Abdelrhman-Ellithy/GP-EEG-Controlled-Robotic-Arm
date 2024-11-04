@@ -17,31 +17,6 @@ Graduation_Project_Robotic_Arm
 ├── .settings
 ├── Inc
 │   ├── HAL
-│   │   ├── BUTTON
-│   │   │   └── Button_Config.h
-│   │   │   └── Button_Interface.h
-│   │   │   └── Button_Private.h
-│   │   ├── BUZZER
-│   │   │   └── Buzzer_Interface.h
-│   │   │   └── Buzzer_Private.h
-│   │   │   └── Buzzzer_Config.h
-│   │   ├── DC Motor
-│   │   │   └── DCMOTOR_Interface.h
-│   │   │   └── DC_Motor_Config.h
-│   │   │   └── DC_Motor_Private.h
-│   │   ├── Keypad
-│   │   │   └── Keypad_Config.h
-│   │   │   └── Keypad_Private.h
-│   │   │   └── Keypad_interface.h
-│   │   ├── LCD
-│   │   │   └── CLCD_config.h
-│   │   │   └── CLCD_extrachar.h
-│   │   │   └── CLCD_interface.h
-│   │   │   └── CLCD_private.h
-│   │   ├── LED
-│   │   │   └── LED_Config.h
-│   │   │   └── LED_Interface.h
-│   │   │   └── LED_Private.h
 │   │   ├── Servo
 │   │   │   └── Servo_Interface.h
 │   │   │   └── Servo_conifg.h
@@ -108,12 +83,6 @@ Graduation_Project_Robotic_Arm
 │   │   │   └── UART_private.h
 ├── Src
 │   ├── HAL
-│   │   └── Button_progaram.c
-│   │   └── Buzzer_Program.c
-│   │   └── CLCD_program.c
-│   │   └── DCMOTOR_program.c
-│   │   └── Keypad_Program.c
-│   │   └── LED_Program.c
 │   │   └── Servo_Program.c
 │   ├── MCAL
 │   │   └── ADC_program.c

@@ -1,8 +1,8 @@
-../Src/MCAL/TIMER1_program.c:22:6:TIMER1_Init	16	static
-../Src/MCAL/TIMER1_program.c:30:6:TIMER1_InitPwmChannel	16	static
-../Src/MCAL/TIMER1_program.c:70:6:TIMER1_SetPWM_FREQ	72	static
-../Src/MCAL/TIMER1_program.c:94:6:TIMER1_SetFREQ	40	static
-../Src/MCAL/TIMER1_program.c:104:6:TIMER1_SetARRValue	16	static
-../Src/MCAL/TIMER1_program.c:113:6:TIMER1_Set_CRR_Value	16	static
-../Src/MCAL/TIMER1_program.c:157:6:TIMER1_Stop	4	static
-../Src/MCAL/TIMER1_program.c:169:6:TIM1_UP_IRQHandler	8	static
+../Src/MCAL/TIMER1_program.c:21:6:TIMER1_Init	16	static
+../Src/MCAL/TIMER1_program.c:29:6:TIMER1_InitPwmChannel	16	static
+../Src/MCAL/TIMER1_program.c:69:6:TIMER1_SetPWM_FREQ	72	static
+../Src/MCAL/TIMER1_program.c:93:6:TIMER1_SetFREQ	40	static
+../Src/MCAL/TIMER1_program.c:103:6:TIMER1_SetARRValue	16	static
+../Src/MCAL/TIMER1_program.c:112:6:TIMER1_Set_CRR_Value	16	static
+../Src/MCAL/TIMER1_program.c:156:6:TIMER1_Stop	4	static
+../Src/MCAL/TIMER1_program.c:168:6:TIM1_UP_IRQHandler	8	static

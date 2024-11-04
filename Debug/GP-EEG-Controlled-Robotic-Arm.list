@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_rnglists 000002b6  00000000  00000000  000238d8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  000008dc  00000000  00000000  00023b8e  2**0
+ 17 .debug_macro  0000139d  00000000  00000000  00023b8e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00001980  00000000  00000000  0002446a  2**0
+ 18 .debug_line   00001927  00000000  00000000  00024f2b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00006a2e  00000000  00000000  00025dea  2**0
+ 19 .debug_str    000066f2  00000000  00000000  00026852  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00000cb8  00000000  00000000  0002c818  2**2
+ 20 .debug_frame  00000cb8  00000000  00000000  0002cf44  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000075  00000000  00000000  0002d4d0  2**0
+ 21 .debug_line_str 00000075  00000000  00000000  0002dbfc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2442,7 +2442,7 @@ void SysTick_Handler(void){
  80011c4:	200000d0 	.word	0x200000d0
 
 080011c8 <TIMER1_Init>:
-#include "HAL/LCD/CLCD_interface.h"
+#include "MCAL/TIMER1/TIMER1_config.h"
 
 static void (*TIMER1_callback)(void) = NULL;
 
