@@ -5,25 +5,25 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 .isr_vector   00000130  08000000  08000000  00010000  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  1 .text         00001750  08000130  08000130  00010130  2**2
+  1 .text         00001790  08000130  08000130  00010130  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000000  08001880  08001880  00020054  2**0
+  2 .rodata       00000000  080018c0  080018c0  00020054  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  3 .ARM.extab    00000000  08001880  08001880  00020054  2**0
+  3 .ARM.extab    00000000  080018c0  080018c0  00020054  2**0
                   CONTENTS
-  4 .ARM          00000008  08001880  08001880  00011880  2**2
+  4 .ARM          00000008  080018c0  080018c0  000118c0  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08001888  08001888  00020054  2**0
+  5 .preinit_array 00000000  080018c8  080018c8  00020054  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08001888  08001888  00011888  2**2
+  6 .init_array   00000004  080018c8  080018c8  000118c8  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  0800188c  0800188c  0001188c  2**2
+  7 .fini_array   00000004  080018cc  080018cc  000118cc  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         00000054  20000000  08001890  00020000  2**2
+  8 .data         00000054  20000000  080018d0  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000098  20000054  080018e4  00020054  2**2
+  9 .bss          00000098  20000054  08001924  00020054  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  200000ec  080018e4  000200ec  2**0
+ 10 ._user_heap_stack 00000604  200000ec  08001924  000200ec  2**0
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020054  2**0
                   CONTENTS, READONLY
@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  0000139d  00000000  00000000  00023b8e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00001927  00000000  00000000  00024f2b  2**0
+ 18 .debug_line   0000192f  00000000  00000000  00024f2b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000066f2  00000000  00000000  00026852  2**0
+ 19 .debug_str    000066f2  00000000  00000000  0002685a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00000cb8  00000000  00000000  0002cf44  2**2
+ 20 .debug_frame  00000cb8  00000000  00000000  0002cf4c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000075  00000000  00000000  0002dbfc  2**0
+ 21 .debug_line_str 00000075  00000000  00000000  0002dc04  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -64,7 +64,7 @@ Disassembly of section .text:
  8000146:	bd10      	pop	{r4, pc}
  8000148:	20000054 	.word	0x20000054
  800014c:	00000000 	.word	0x00000000
- 8000150:	08001868 	.word	0x08001868
+ 8000150:	080018a8 	.word	0x080018a8
 
 08000154 <frame_dummy>:
  8000154:	b508      	push	{r3, lr}
@@ -76,7 +76,7 @@ Disassembly of section .text:
  8000162:	bd08      	pop	{r3, pc}
  8000164:	00000000 	.word	0x00000000
  8000168:	20000058 	.word	0x20000058
- 800016c:	08001868 	.word	0x08001868
+ 800016c:	080018a8 	.word	0x080018a8
 
 08000170 <__aeabi_uldivmod>:
  8000170:	b953      	cbnz	r3, 8000188 <__aeabi_uldivmod+0x18>
@@ -3192,25 +3192,25 @@ void solveCMD() {
  800167c:	080016a3 	.word	0x080016a3
  8001680:	080016a9 	.word	0x080016a9
     case GRAB: grab(); break;
- 8001684:	f000 f830 	bl	80016e8 <grab>
+ 8001684:	f000 f850 	bl	8001728 <grab>
  8001688:	e012      	b.n	80016b0 <solveCMD+0x60>
     case RELEASE: release(); break;
- 800168a:	f000 f835 	bl	80016f8 <release>
+ 800168a:	f000 f855 	bl	8001738 <release>
  800168e:	e00f      	b.n	80016b0 <solveCMD+0x60>
     case UP: moveUp(); break;
  8001690:	f000 f812 	bl	80016b8 <moveUp>
  8001694:	e00c      	b.n	80016b0 <solveCMD+0x60>
     case DOWN: moveDown(); break;
- 8001696:	f000 f81b 	bl	80016d0 <moveDown>
+ 8001696:	f000 f82b 	bl	80016f0 <moveDown>
  800169a:	e009      	b.n	80016b0 <solveCMD+0x60>
     case RIGHT_MOST: rotateRight(); break;
- 800169c:	f000 f83c 	bl	8001718 <rotateRight>
+ 800169c:	f000 f85c 	bl	8001758 <rotateRight>
  80016a0:	e006      	b.n	80016b0 <solveCMD+0x60>
     case LEFT_MOST: rotateLeft(); break;
- 80016a2:	f000 f831 	bl	8001708 <rotateLeft>
+ 80016a2:	f000 f851 	bl	8001748 <rotateLeft>
  80016a6:	e003      	b.n	80016b0 <solveCMD+0x60>
     case INIT_STATE: returnToInitialState(); break;
- 80016a8:	f000 f83e 	bl	8001728 <returnToInitialState>
+ 80016a8:	f000 f85e 	bl	8001768 <returnToInitialState>
  80016ac:	e000      	b.n	80016b0 <solveCMD+0x60>
     default: break;
  80016ae:	bf00      	nop
@@ -3224,341 +3224,374 @@ void solveCMD() {
 void moveUp() {
  80016b8:	b580      	push	{r7, lr}
  80016ba:	af00      	add	r7, sp, #0
-	Servo_setAngle(Servo_UP_DOWN, UP_MOST_ANGLE);
- 80016bc:	2178      	movs	r1, #120	; 0x78
+	setAngle(Servo_UP_DOWN, UP_MOST_ANGLE/4);
+ 80016bc:	211e      	movs	r1, #30
  80016be:	2002      	movs	r0, #2
- 80016c0:	f7fe fef2 	bl	80004a8 <Servo_setAngle>
-	Servo_setAngle(Servo_FORWARD_BACKWARD, BACK_MOST_ANGLE);
- 80016c4:	2132      	movs	r1, #50	; 0x32
+ 80016c0:	f000 f866 	bl	8001790 <setAngle>
+	setAngle(Servo_FORWARD_BACKWARD, BACK_MOST_ANGLE/4);
+ 80016c4:	210c      	movs	r1, #12
  80016c6:	2001      	movs	r0, #1
- 80016c8:	f7fe feee 	bl	80004a8 <Servo_setAngle>
-}
- 80016cc:	bf00      	nop
- 80016ce:	bd80      	pop	{r7, pc}
+ 80016c8:	f000 f862 	bl	8001790 <setAngle>
+	setAngle(Servo_UP_DOWN, UP_MOST_ANGLE/2);
+ 80016cc:	213c      	movs	r1, #60	; 0x3c
+ 80016ce:	2002      	movs	r0, #2
+ 80016d0:	f000 f85e 	bl	8001790 <setAngle>
+	setAngle(Servo_FORWARD_BACKWARD, BACK_MOST_ANGLE/2);
+ 80016d4:	2119      	movs	r1, #25
+ 80016d6:	2001      	movs	r0, #1
+ 80016d8:	f000 f85a 	bl	8001790 <setAngle>
+	setAngle(Servo_UP_DOWN, UP_MOST_ANGLE);
+ 80016dc:	2178      	movs	r1, #120	; 0x78
+ 80016de:	2002      	movs	r0, #2
+ 80016e0:	f000 f856 	bl	8001790 <setAngle>
+	setAngle(Servo_FORWARD_BACKWARD, BACK_MOST_ANGLE);
+ 80016e4:	2132      	movs	r1, #50	; 0x32
+ 80016e6:	2001      	movs	r0, #1
+ 80016e8:	f000 f852 	bl	8001790 <setAngle>
 
-080016d0 <moveDown>:
+}
+ 80016ec:	bf00      	nop
+ 80016ee:	bd80      	pop	{r7, pc}
+
+080016f0 <moveDown>:
 
 void moveDown() {
- 80016d0:	b580      	push	{r7, lr}
- 80016d2:	af00      	add	r7, sp, #0
-	Servo_setAngle(Servo_UP_DOWN, DOWN_MOST_ANGLE);
- 80016d4:	210a      	movs	r1, #10
- 80016d6:	2002      	movs	r0, #2
- 80016d8:	f7fe fee6 	bl	80004a8 <Servo_setAngle>
+ 80016f0:	b580      	push	{r7, lr}
+ 80016f2:	af00      	add	r7, sp, #0
+	setAngle(Servo_UP_DOWN, DOWN_MOST_ANGLE/4);
+ 80016f4:	2102      	movs	r1, #2
+ 80016f6:	2002      	movs	r0, #2
+ 80016f8:	f000 f84a 	bl	8001790 <setAngle>
+	setAngle(Servo_FORWARD_BACKWARD, FORWARD_MOST_ANGLE/4);
+ 80016fc:	2120      	movs	r1, #32
+ 80016fe:	2001      	movs	r0, #1
+ 8001700:	f000 f846 	bl	8001790 <setAngle>
+	setAngle(Servo_UP_DOWN, DOWN_MOST_ANGLE/2);
+ 8001704:	2105      	movs	r1, #5
+ 8001706:	2002      	movs	r0, #2
+ 8001708:	f000 f842 	bl	8001790 <setAngle>
+	setAngle(Servo_FORWARD_BACKWARD, FORWARD_MOST_ANGLE/2);
+ 800170c:	2141      	movs	r1, #65	; 0x41
+ 800170e:	2001      	movs	r0, #1
+ 8001710:	f000 f83e 	bl	8001790 <setAngle>
+	setAngle(Servo_UP_DOWN, DOWN_MOST_ANGLE);
+ 8001714:	210a      	movs	r1, #10
+ 8001716:	2002      	movs	r0, #2
+ 8001718:	f000 f83a 	bl	8001790 <setAngle>
 	setAngle(Servo_FORWARD_BACKWARD, FORWARD_MOST_ANGLE);
- 80016dc:	2182      	movs	r1, #130	; 0x82
- 80016de:	2001      	movs	r0, #1
- 80016e0:	f000 f836 	bl	8001750 <setAngle>
-}
- 80016e4:	bf00      	nop
- 80016e6:	bd80      	pop	{r7, pc}
-
-080016e8 <grab>:
-
-void grab() {
- 80016e8:	b580      	push	{r7, lr}
- 80016ea:	af00      	add	r7, sp, #0
-	Servo_setAngle(Servo_GRABBER, GRAB_MOST_ANGLE);
- 80016ec:	2178      	movs	r1, #120	; 0x78
- 80016ee:	2003      	movs	r0, #3
- 80016f0:	f7fe feda 	bl	80004a8 <Servo_setAngle>
-}
- 80016f4:	bf00      	nop
- 80016f6:	bd80      	pop	{r7, pc}
-
-080016f8 <release>:
-
-void release() {
- 80016f8:	b580      	push	{r7, lr}
- 80016fa:	af00      	add	r7, sp, #0
-	Servo_setAngle(Servo_GRABBER, RELEASE_MOST_ANGLE);
- 80016fc:	210a      	movs	r1, #10
- 80016fe:	2003      	movs	r0, #3
- 8001700:	f7fe fed2 	bl	80004a8 <Servo_setAngle>
-}
- 8001704:	bf00      	nop
- 8001706:	bd80      	pop	{r7, pc}
-
-08001708 <rotateLeft>:
-
-void rotateLeft() {
- 8001708:	b580      	push	{r7, lr}
- 800170a:	af00      	add	r7, sp, #0
-	Servo_setAngle(Servo_RIGHT_LIFT_Rotation, LEFT_MOST_ANGLE);
- 800170c:	21a0      	movs	r1, #160	; 0xa0
- 800170e:	2000      	movs	r0, #0
- 8001710:	f7fe feca 	bl	80004a8 <Servo_setAngle>
-}
- 8001714:	bf00      	nop
- 8001716:	bd80      	pop	{r7, pc}
-
-08001718 <rotateRight>:
-
-void rotateRight() {
- 8001718:	b580      	push	{r7, lr}
- 800171a:	af00      	add	r7, sp, #0
-	Servo_setAngle(Servo_RIGHT_LIFT_Rotation, RIGHT_MOST_ANGLE);
- 800171c:	2100      	movs	r1, #0
- 800171e:	2000      	movs	r0, #0
- 8001720:	f7fe fec2 	bl	80004a8 <Servo_setAngle>
+ 800171c:	2182      	movs	r1, #130	; 0x82
+ 800171e:	2001      	movs	r0, #1
+ 8001720:	f000 f836 	bl	8001790 <setAngle>
 }
  8001724:	bf00      	nop
  8001726:	bd80      	pop	{r7, pc}
 
-08001728 <returnToInitialState>:
+08001728 <grab>:
 
-void returnToInitialState() {
+void grab() {
  8001728:	b580      	push	{r7, lr}
  800172a:	af00      	add	r7, sp, #0
-	Servo_setAngle(Servo_RIGHT_LIFT_Rotation, (RIGHT_MOST_ANGLE + LEFT_MOST_ANGLE) / 2);
- 800172c:	2150      	movs	r1, #80	; 0x50
- 800172e:	2000      	movs	r0, #0
- 8001730:	f7fe feba 	bl	80004a8 <Servo_setAngle>
-	Servo_setAngle(Servo_GRABBER, RELEASE_MOST_ANGLE);
- 8001734:	210a      	movs	r1, #10
- 8001736:	2003      	movs	r0, #3
- 8001738:	f7fe feb6 	bl	80004a8 <Servo_setAngle>
-	Servo_setAngle(Servo_FORWARD_BACKWARD, (FORWARD_MOST_ANGLE + BACK_MOST_ANGLE) / 2);
- 800173c:	215a      	movs	r1, #90	; 0x5a
- 800173e:	2001      	movs	r0, #1
- 8001740:	f7fe feb2 	bl	80004a8 <Servo_setAngle>
-	Servo_setAngle(Servo_UP_DOWN, (UP_MOST_ANGLE + DOWN_MOST_ANGLE) / 2);
- 8001744:	2141      	movs	r1, #65	; 0x41
- 8001746:	2002      	movs	r0, #2
- 8001748:	f7fe feae 	bl	80004a8 <Servo_setAngle>
+	setAngle(Servo_GRABBER, GRAB_MOST_ANGLE);
+ 800172c:	2178      	movs	r1, #120	; 0x78
+ 800172e:	2003      	movs	r0, #3
+ 8001730:	f000 f82e 	bl	8001790 <setAngle>
 }
- 800174c:	bf00      	nop
- 800174e:	bd80      	pop	{r7, pc}
+ 8001734:	bf00      	nop
+ 8001736:	bd80      	pop	{r7, pc}
 
-08001750 <setAngle>:
+08001738 <release>:
+
+void release() {
+ 8001738:	b580      	push	{r7, lr}
+ 800173a:	af00      	add	r7, sp, #0
+	setAngle(Servo_GRABBER, RELEASE_MOST_ANGLE);
+ 800173c:	210a      	movs	r1, #10
+ 800173e:	2003      	movs	r0, #3
+ 8001740:	f000 f826 	bl	8001790 <setAngle>
+}
+ 8001744:	bf00      	nop
+ 8001746:	bd80      	pop	{r7, pc}
+
+08001748 <rotateLeft>:
+
+void rotateLeft() {
+ 8001748:	b580      	push	{r7, lr}
+ 800174a:	af00      	add	r7, sp, #0
+	setAngle(Servo_RIGHT_LIFT_Rotation, LEFT_MOST_ANGLE);
+ 800174c:	21a0      	movs	r1, #160	; 0xa0
+ 800174e:	2000      	movs	r0, #0
+ 8001750:	f000 f81e 	bl	8001790 <setAngle>
+}
+ 8001754:	bf00      	nop
+ 8001756:	bd80      	pop	{r7, pc}
+
+08001758 <rotateRight>:
+
+void rotateRight() {
+ 8001758:	b580      	push	{r7, lr}
+ 800175a:	af00      	add	r7, sp, #0
+	setAngle(Servo_RIGHT_LIFT_Rotation, RIGHT_MOST_ANGLE);
+ 800175c:	2100      	movs	r1, #0
+ 800175e:	2000      	movs	r0, #0
+ 8001760:	f000 f816 	bl	8001790 <setAngle>
+}
+ 8001764:	bf00      	nop
+ 8001766:	bd80      	pop	{r7, pc}
+
+08001768 <returnToInitialState>:
+
+void returnToInitialState() {
+ 8001768:	b580      	push	{r7, lr}
+ 800176a:	af00      	add	r7, sp, #0
+	setAngle(Servo_RIGHT_LIFT_Rotation, (RIGHT_MOST_ANGLE + LEFT_MOST_ANGLE) / 2);
+ 800176c:	2150      	movs	r1, #80	; 0x50
+ 800176e:	2000      	movs	r0, #0
+ 8001770:	f000 f80e 	bl	8001790 <setAngle>
+	setAngle(Servo_GRABBER, RELEASE_MOST_ANGLE);
+ 8001774:	210a      	movs	r1, #10
+ 8001776:	2003      	movs	r0, #3
+ 8001778:	f000 f80a 	bl	8001790 <setAngle>
+	setAngle(Servo_FORWARD_BACKWARD, (FORWARD_MOST_ANGLE + BACK_MOST_ANGLE) / 2);
+ 800177c:	215a      	movs	r1, #90	; 0x5a
+ 800177e:	2001      	movs	r0, #1
+ 8001780:	f000 f806 	bl	8001790 <setAngle>
+	setAngle(Servo_UP_DOWN, (UP_MOST_ANGLE + DOWN_MOST_ANGLE) / 2);
+ 8001784:	2141      	movs	r1, #65	; 0x41
+ 8001786:	2002      	movs	r0, #2
+ 8001788:	f000 f802 	bl	8001790 <setAngle>
+}
+ 800178c:	bf00      	nop
+ 800178e:	bd80      	pop	{r7, pc}
+
+08001790 <setAngle>:
 
 void setAngle(ServoID_t servo_ID, u8 targetAngle) {
- 8001750:	b580      	push	{r7, lr}
- 8001752:	b084      	sub	sp, #16
- 8001754:	af00      	add	r7, sp, #0
- 8001756:	4603      	mov	r3, r0
- 8001758:	460a      	mov	r2, r1
- 800175a:	71fb      	strb	r3, [r7, #7]
- 800175c:	4613      	mov	r3, r2
- 800175e:	71bb      	strb	r3, [r7, #6]
+ 8001790:	b580      	push	{r7, lr}
+ 8001792:	b084      	sub	sp, #16
+ 8001794:	af00      	add	r7, sp, #0
+ 8001796:	4603      	mov	r3, r0
+ 8001798:	460a      	mov	r2, r1
+ 800179a:	71fb      	strb	r3, [r7, #7]
+ 800179c:	4613      	mov	r3, r2
+ 800179e:	71bb      	strb	r3, [r7, #6]
 
   u8 currentAngle = arrServoLastValue[servo_ID];
- 8001760:	79fb      	ldrb	r3, [r7, #7]
- 8001762:	4a19      	ldr	r2, [pc, #100]	; (80017c8 <setAngle+0x78>)
- 8001764:	5cd3      	ldrb	r3, [r2, r3]
- 8001766:	73bb      	strb	r3, [r7, #14]
+ 80017a0:	79fb      	ldrb	r3, [r7, #7]
+ 80017a2:	4a19      	ldr	r2, [pc, #100]	; (8001808 <setAngle+0x78>)
+ 80017a4:	5cd3      	ldrb	r3, [r2, r3]
+ 80017a6:	73bb      	strb	r3, [r7, #14]
   if (currentAngle == targetAngle){
- 8001768:	7bba      	ldrb	r2, [r7, #14]
- 800176a:	79bb      	ldrb	r3, [r7, #6]
- 800176c:	429a      	cmp	r2, r3
- 800176e:	d027      	beq.n	80017c0 <setAngle+0x70>
+ 80017a8:	7bba      	ldrb	r2, [r7, #14]
+ 80017aa:	79bb      	ldrb	r3, [r7, #6]
+ 80017ac:	429a      	cmp	r2, r3
+ 80017ae:	d027      	beq.n	8001800 <setAngle+0x70>
 	  return;
   }
   else {
-	  arrServoLastValue[servo_ID]=currentAngle;
- 8001770:	79fb      	ldrb	r3, [r7, #7]
- 8001772:	4915      	ldr	r1, [pc, #84]	; (80017c8 <setAngle+0x78>)
- 8001774:	7bba      	ldrb	r2, [r7, #14]
- 8001776:	54ca      	strb	r2, [r1, r3]
+	  arrServoLastValue[servo_ID]=targetAngle;
+ 80017b0:	79fb      	ldrb	r3, [r7, #7]
+ 80017b2:	4915      	ldr	r1, [pc, #84]	; (8001808 <setAngle+0x78>)
+ 80017b4:	79ba      	ldrb	r2, [r7, #6]
+ 80017b6:	54ca      	strb	r2, [r1, r3]
 	  s8 step = (targetAngle > currentAngle) ? 1 : -1;
- 8001778:	79ba      	ldrb	r2, [r7, #6]
- 800177a:	7bbb      	ldrb	r3, [r7, #14]
- 800177c:	429a      	cmp	r2, r3
- 800177e:	d901      	bls.n	8001784 <setAngle+0x34>
- 8001780:	2301      	movs	r3, #1
- 8001782:	e001      	b.n	8001788 <setAngle+0x38>
- 8001784:	f04f 33ff 	mov.w	r3, #4294967295
- 8001788:	737b      	strb	r3, [r7, #13]
+ 80017b8:	79ba      	ldrb	r2, [r7, #6]
+ 80017ba:	7bbb      	ldrb	r3, [r7, #14]
+ 80017bc:	429a      	cmp	r2, r3
+ 80017be:	d901      	bls.n	80017c4 <setAngle+0x34>
+ 80017c0:	2301      	movs	r3, #1
+ 80017c2:	e001      	b.n	80017c8 <setAngle+0x38>
+ 80017c4:	f04f 33ff 	mov.w	r3, #4294967295
+ 80017c8:	737b      	strb	r3, [r7, #13]
 	  for (u8 angle = currentAngle; angle != targetAngle; angle += step) {
- 800178a:	7bbb      	ldrb	r3, [r7, #14]
- 800178c:	73fb      	strb	r3, [r7, #15]
- 800178e:	e00c      	b.n	80017aa <setAngle+0x5a>
+ 80017ca:	7bbb      	ldrb	r3, [r7, #14]
+ 80017cc:	73fb      	strb	r3, [r7, #15]
+ 80017ce:	e00c      	b.n	80017ea <setAngle+0x5a>
 		  Servo_setAngle(servo_ID,angle);
- 8001790:	7bfa      	ldrb	r2, [r7, #15]
- 8001792:	79fb      	ldrb	r3, [r7, #7]
- 8001794:	4611      	mov	r1, r2
- 8001796:	4618      	mov	r0, r3
- 8001798:	f7fe fe86 	bl	80004a8 <Servo_setAngle>
-	      _delay_ms(1);
- 800179c:	2001      	movs	r0, #1
- 800179e:	f7ff fed1 	bl	8001544 <_delay_ms>
+ 80017d0:	7bfa      	ldrb	r2, [r7, #15]
+ 80017d2:	79fb      	ldrb	r3, [r7, #7]
+ 80017d4:	4611      	mov	r1, r2
+ 80017d6:	4618      	mov	r0, r3
+ 80017d8:	f7fe fe66 	bl	80004a8 <Servo_setAngle>
+	      _delay_ms(8);
+ 80017dc:	2008      	movs	r0, #8
+ 80017de:	f7ff feb1 	bl	8001544 <_delay_ms>
 	  for (u8 angle = currentAngle; angle != targetAngle; angle += step) {
- 80017a2:	7b7a      	ldrb	r2, [r7, #13]
- 80017a4:	7bfb      	ldrb	r3, [r7, #15]
- 80017a6:	4413      	add	r3, r2
- 80017a8:	73fb      	strb	r3, [r7, #15]
- 80017aa:	7bfa      	ldrb	r2, [r7, #15]
- 80017ac:	79bb      	ldrb	r3, [r7, #6]
- 80017ae:	429a      	cmp	r2, r3
- 80017b0:	d1ee      	bne.n	8001790 <setAngle+0x40>
+ 80017e2:	7b7a      	ldrb	r2, [r7, #13]
+ 80017e4:	7bfb      	ldrb	r3, [r7, #15]
+ 80017e6:	4413      	add	r3, r2
+ 80017e8:	73fb      	strb	r3, [r7, #15]
+ 80017ea:	7bfa      	ldrb	r2, [r7, #15]
+ 80017ec:	79bb      	ldrb	r3, [r7, #6]
+ 80017ee:	429a      	cmp	r2, r3
+ 80017f0:	d1ee      	bne.n	80017d0 <setAngle+0x40>
 	  }
 	  Servo_setAngle(servo_ID,targetAngle);
- 80017b2:	79ba      	ldrb	r2, [r7, #6]
- 80017b4:	79fb      	ldrb	r3, [r7, #7]
- 80017b6:	4611      	mov	r1, r2
- 80017b8:	4618      	mov	r0, r3
- 80017ba:	f7fe fe75 	bl	80004a8 <Servo_setAngle>
+ 80017f2:	79ba      	ldrb	r2, [r7, #6]
+ 80017f4:	79fb      	ldrb	r3, [r7, #7]
+ 80017f6:	4611      	mov	r1, r2
+ 80017f8:	4618      	mov	r0, r3
+ 80017fa:	f7fe fe55 	bl	80004a8 <Servo_setAngle>
 	  return;
- 80017be:	e000      	b.n	80017c2 <setAngle+0x72>
+ 80017fe:	e000      	b.n	8001802 <setAngle+0x72>
 	  return;
- 80017c0:	bf00      	nop
+ 8001800:	bf00      	nop
   }
 }
- 80017c2:	3710      	adds	r7, #16
- 80017c4:	46bd      	mov	sp, r7
- 80017c6:	bd80      	pop	{r7, pc}
- 80017c8:	200000e8 	.word	0x200000e8
+ 8001802:	3710      	adds	r7, #16
+ 8001804:	46bd      	mov	sp, r7
+ 8001806:	bd80      	pop	{r7, pc}
+ 8001808:	200000e8 	.word	0x200000e8
 
-080017cc <Reset_Handler>:
+0800180c <Reset_Handler>:
 
   .section .text.Reset_Handler
   .weak Reset_Handler
   .type Reset_Handler, %function
 Reset_Handler:
   ldr   r0, =_estack
- 80017cc:	480d      	ldr	r0, [pc, #52]	; (8001804 <LoopForever+0x2>)
+ 800180c:	480d      	ldr	r0, [pc, #52]	; (8001844 <LoopForever+0x2>)
   mov   sp, r0          /* set stack pointer */
- 80017ce:	4685      	mov	sp, r0
+ 800180e:	4685      	mov	sp, r0
 /* Call the clock system initialization function.*/
   bl  SystemInit
- 80017d0:	f3af 8000 	nop.w
+ 8001810:	f3af 8000 	nop.w
 
 /* Copy the data segment initializers from flash to SRAM */
   ldr r0, =_sdata
- 80017d4:	480c      	ldr	r0, [pc, #48]	; (8001808 <LoopForever+0x6>)
+ 8001814:	480c      	ldr	r0, [pc, #48]	; (8001848 <LoopForever+0x6>)
   ldr r1, =_edata
- 80017d6:	490d      	ldr	r1, [pc, #52]	; (800180c <LoopForever+0xa>)
+ 8001816:	490d      	ldr	r1, [pc, #52]	; (800184c <LoopForever+0xa>)
   ldr r2, =_sidata
- 80017d8:	4a0d      	ldr	r2, [pc, #52]	; (8001810 <LoopForever+0xe>)
+ 8001818:	4a0d      	ldr	r2, [pc, #52]	; (8001850 <LoopForever+0xe>)
   movs r3, #0
- 80017da:	2300      	movs	r3, #0
+ 800181a:	2300      	movs	r3, #0
   b LoopCopyDataInit
- 80017dc:	e002      	b.n	80017e4 <LoopCopyDataInit>
+ 800181c:	e002      	b.n	8001824 <LoopCopyDataInit>
 
-080017de <CopyDataInit>:
+0800181e <CopyDataInit>:
 
 CopyDataInit:
   ldr r4, [r2, r3]
- 80017de:	58d4      	ldr	r4, [r2, r3]
+ 800181e:	58d4      	ldr	r4, [r2, r3]
   str r4, [r0, r3]
- 80017e0:	50c4      	str	r4, [r0, r3]
+ 8001820:	50c4      	str	r4, [r0, r3]
   adds r3, r3, #4
- 80017e2:	3304      	adds	r3, #4
+ 8001822:	3304      	adds	r3, #4
 
-080017e4 <LoopCopyDataInit>:
+08001824 <LoopCopyDataInit>:
 
 LoopCopyDataInit:
   adds r4, r0, r3
- 80017e4:	18c4      	adds	r4, r0, r3
+ 8001824:	18c4      	adds	r4, r0, r3
   cmp r4, r1
- 80017e6:	428c      	cmp	r4, r1
+ 8001826:	428c      	cmp	r4, r1
   bcc CopyDataInit
- 80017e8:	d3f9      	bcc.n	80017de <CopyDataInit>
+ 8001828:	d3f9      	bcc.n	800181e <CopyDataInit>
 
 /* Zero fill the bss segment. */
   ldr r2, =_sbss
- 80017ea:	4a0a      	ldr	r2, [pc, #40]	; (8001814 <LoopForever+0x12>)
+ 800182a:	4a0a      	ldr	r2, [pc, #40]	; (8001854 <LoopForever+0x12>)
   ldr r4, =_ebss
- 80017ec:	4c0a      	ldr	r4, [pc, #40]	; (8001818 <LoopForever+0x16>)
+ 800182c:	4c0a      	ldr	r4, [pc, #40]	; (8001858 <LoopForever+0x16>)
   movs r3, #0
- 80017ee:	2300      	movs	r3, #0
+ 800182e:	2300      	movs	r3, #0
   b LoopFillZerobss
- 80017f0:	e001      	b.n	80017f6 <LoopFillZerobss>
+ 8001830:	e001      	b.n	8001836 <LoopFillZerobss>
 
-080017f2 <FillZerobss>:
+08001832 <FillZerobss>:
 
 FillZerobss:
   str  r3, [r2]
- 80017f2:	6013      	str	r3, [r2, #0]
+ 8001832:	6013      	str	r3, [r2, #0]
   adds r2, r2, #4
- 80017f4:	3204      	adds	r2, #4
+ 8001834:	3204      	adds	r2, #4
 
-080017f6 <LoopFillZerobss>:
+08001836 <LoopFillZerobss>:
 
 LoopFillZerobss:
   cmp r2, r4
- 80017f6:	42a2      	cmp	r2, r4
+ 8001836:	42a2      	cmp	r2, r4
   bcc FillZerobss
- 80017f8:	d3fb      	bcc.n	80017f2 <FillZerobss>
+ 8001838:	d3fb      	bcc.n	8001832 <FillZerobss>
 
 /* Call static constructors */
   bl __libc_init_array
- 80017fa:	f000 f811 	bl	8001820 <__libc_init_array>
+ 800183a:	f000 f811 	bl	8001860 <__libc_init_array>
 /* Call the application's entry point.*/
   bl main
- 80017fe:	f7ff fecb 	bl	8001598 <main>
+ 800183e:	f7ff feab 	bl	8001598 <main>
 
-08001802 <LoopForever>:
+08001842 <LoopForever>:
 
 LoopForever:
   b LoopForever
- 8001802:	e7fe      	b.n	8001802 <LoopForever>
+ 8001842:	e7fe      	b.n	8001842 <LoopForever>
   ldr   r0, =_estack
- 8001804:	20005000 	.word	0x20005000
+ 8001844:	20005000 	.word	0x20005000
   ldr r0, =_sdata
- 8001808:	20000000 	.word	0x20000000
+ 8001848:	20000000 	.word	0x20000000
   ldr r1, =_edata
- 800180c:	20000054 	.word	0x20000054
+ 800184c:	20000054 	.word	0x20000054
   ldr r2, =_sidata
- 8001810:	08001890 	.word	0x08001890
+ 8001850:	080018d0 	.word	0x080018d0
   ldr r2, =_sbss
- 8001814:	20000054 	.word	0x20000054
+ 8001854:	20000054 	.word	0x20000054
   ldr r4, =_ebss
- 8001818:	200000ec 	.word	0x200000ec
+ 8001858:	200000ec 	.word	0x200000ec
 
-0800181c <ADC1_2_IRQHandler>:
+0800185c <ADC1_2_IRQHandler>:
  * @retval : None
 */
   .section .text.Default_Handler,"ax",%progbits
 Default_Handler:
 Infinite_Loop:
   b Infinite_Loop
- 800181c:	e7fe      	b.n	800181c <ADC1_2_IRQHandler>
+ 800185c:	e7fe      	b.n	800185c <ADC1_2_IRQHandler>
 	...
 
-08001820 <__libc_init_array>:
- 8001820:	b570      	push	{r4, r5, r6, lr}
- 8001822:	2600      	movs	r6, #0
- 8001824:	4d0c      	ldr	r5, [pc, #48]	; (8001858 <__libc_init_array+0x38>)
- 8001826:	4c0d      	ldr	r4, [pc, #52]	; (800185c <__libc_init_array+0x3c>)
- 8001828:	1b64      	subs	r4, r4, r5
- 800182a:	10a4      	asrs	r4, r4, #2
- 800182c:	42a6      	cmp	r6, r4
- 800182e:	d109      	bne.n	8001844 <__libc_init_array+0x24>
- 8001830:	f000 f81a 	bl	8001868 <_init>
- 8001834:	2600      	movs	r6, #0
- 8001836:	4d0a      	ldr	r5, [pc, #40]	; (8001860 <__libc_init_array+0x40>)
- 8001838:	4c0a      	ldr	r4, [pc, #40]	; (8001864 <__libc_init_array+0x44>)
- 800183a:	1b64      	subs	r4, r4, r5
- 800183c:	10a4      	asrs	r4, r4, #2
- 800183e:	42a6      	cmp	r6, r4
- 8001840:	d105      	bne.n	800184e <__libc_init_array+0x2e>
- 8001842:	bd70      	pop	{r4, r5, r6, pc}
- 8001844:	f855 3b04 	ldr.w	r3, [r5], #4
- 8001848:	4798      	blx	r3
- 800184a:	3601      	adds	r6, #1
- 800184c:	e7ee      	b.n	800182c <__libc_init_array+0xc>
- 800184e:	f855 3b04 	ldr.w	r3, [r5], #4
- 8001852:	4798      	blx	r3
- 8001854:	3601      	adds	r6, #1
- 8001856:	e7f2      	b.n	800183e <__libc_init_array+0x1e>
- 8001858:	08001888 	.word	0x08001888
- 800185c:	08001888 	.word	0x08001888
- 8001860:	08001888 	.word	0x08001888
- 8001864:	0800188c 	.word	0x0800188c
+08001860 <__libc_init_array>:
+ 8001860:	b570      	push	{r4, r5, r6, lr}
+ 8001862:	2600      	movs	r6, #0
+ 8001864:	4d0c      	ldr	r5, [pc, #48]	; (8001898 <__libc_init_array+0x38>)
+ 8001866:	4c0d      	ldr	r4, [pc, #52]	; (800189c <__libc_init_array+0x3c>)
+ 8001868:	1b64      	subs	r4, r4, r5
+ 800186a:	10a4      	asrs	r4, r4, #2
+ 800186c:	42a6      	cmp	r6, r4
+ 800186e:	d109      	bne.n	8001884 <__libc_init_array+0x24>
+ 8001870:	f000 f81a 	bl	80018a8 <_init>
+ 8001874:	2600      	movs	r6, #0
+ 8001876:	4d0a      	ldr	r5, [pc, #40]	; (80018a0 <__libc_init_array+0x40>)
+ 8001878:	4c0a      	ldr	r4, [pc, #40]	; (80018a4 <__libc_init_array+0x44>)
+ 800187a:	1b64      	subs	r4, r4, r5
+ 800187c:	10a4      	asrs	r4, r4, #2
+ 800187e:	42a6      	cmp	r6, r4
+ 8001880:	d105      	bne.n	800188e <__libc_init_array+0x2e>
+ 8001882:	bd70      	pop	{r4, r5, r6, pc}
+ 8001884:	f855 3b04 	ldr.w	r3, [r5], #4
+ 8001888:	4798      	blx	r3
+ 800188a:	3601      	adds	r6, #1
+ 800188c:	e7ee      	b.n	800186c <__libc_init_array+0xc>
+ 800188e:	f855 3b04 	ldr.w	r3, [r5], #4
+ 8001892:	4798      	blx	r3
+ 8001894:	3601      	adds	r6, #1
+ 8001896:	e7f2      	b.n	800187e <__libc_init_array+0x1e>
+ 8001898:	080018c8 	.word	0x080018c8
+ 800189c:	080018c8 	.word	0x080018c8
+ 80018a0:	080018c8 	.word	0x080018c8
+ 80018a4:	080018cc 	.word	0x080018cc
 
-08001868 <_init>:
- 8001868:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 800186a:	bf00      	nop
- 800186c:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 800186e:	bc08      	pop	{r3}
- 8001870:	469e      	mov	lr, r3
- 8001872:	4770      	bx	lr
+080018a8 <_init>:
+ 80018a8:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 80018aa:	bf00      	nop
+ 80018ac:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 80018ae:	bc08      	pop	{r3}
+ 80018b0:	469e      	mov	lr, r3
+ 80018b2:	4770      	bx	lr
 
-08001874 <_fini>:
- 8001874:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 8001876:	bf00      	nop
- 8001878:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 800187a:	bc08      	pop	{r3}
- 800187c:	469e      	mov	lr, r3
- 800187e:	4770      	bx	lr
+080018b4 <_fini>:
+ 80018b4:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 80018b6:	bf00      	nop
+ 80018b8:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 80018ba:	bc08      	pop	{r3}
+ 80018bc:	469e      	mov	lr, r3
+ 80018be:	4770      	bx	lr

@@ -5,7 +5,6 @@
  * @brief          : Main program body
  ******************************************************************************
  * @attention
- *
  * Copyright (c) 2024 Abdelrahman Ellithy.
  * All rights reserved.
  ******************************************************************************
@@ -121,36 +120,45 @@ void solveCMD() {
   }
 }
 void moveUp() {
-	Servo_setAngle(Servo_UP_DOWN, UP_MOST_ANGLE);
-	Servo_setAngle(Servo_FORWARD_BACKWARD, BACK_MOST_ANGLE);
+	setAngle(Servo_UP_DOWN, UP_MOST_ANGLE/4);
+	setAngle(Servo_FORWARD_BACKWARD, BACK_MOST_ANGLE/4);
+	setAngle(Servo_UP_DOWN, UP_MOST_ANGLE/2);
+	setAngle(Servo_FORWARD_BACKWARD, BACK_MOST_ANGLE/2);
+	setAngle(Servo_UP_DOWN, UP_MOST_ANGLE);
+	setAngle(Servo_FORWARD_BACKWARD, BACK_MOST_ANGLE);
+
 }
 
 void moveDown() {
-	Servo_setAngle(Servo_UP_DOWN, DOWN_MOST_ANGLE);
+	setAngle(Servo_UP_DOWN, DOWN_MOST_ANGLE/4);
+	setAngle(Servo_FORWARD_BACKWARD, FORWARD_MOST_ANGLE/4);
+	setAngle(Servo_UP_DOWN, DOWN_MOST_ANGLE/2);
+	setAngle(Servo_FORWARD_BACKWARD, FORWARD_MOST_ANGLE/2);
+	setAngle(Servo_UP_DOWN, DOWN_MOST_ANGLE);
 	setAngle(Servo_FORWARD_BACKWARD, FORWARD_MOST_ANGLE);
 }
 
 void grab() {
-	Servo_setAngle(Servo_GRABBER, GRAB_MOST_ANGLE);
+	setAngle(Servo_GRABBER, GRAB_MOST_ANGLE);
 }
 
 void release() {
-	Servo_setAngle(Servo_GRABBER, RELEASE_MOST_ANGLE);
+	setAngle(Servo_GRABBER, RELEASE_MOST_ANGLE);
 }
 
 void rotateLeft() {
-	Servo_setAngle(Servo_RIGHT_LIFT_Rotation, LEFT_MOST_ANGLE);
+	setAngle(Servo_RIGHT_LIFT_Rotation, LEFT_MOST_ANGLE);
 }
 
 void rotateRight() {
-	Servo_setAngle(Servo_RIGHT_LIFT_Rotation, RIGHT_MOST_ANGLE);
+	setAngle(Servo_RIGHT_LIFT_Rotation, RIGHT_MOST_ANGLE);
 }
 
 void returnToInitialState() {
-	Servo_setAngle(Servo_RIGHT_LIFT_Rotation, (RIGHT_MOST_ANGLE + LEFT_MOST_ANGLE) / 2);
-	Servo_setAngle(Servo_GRABBER, RELEASE_MOST_ANGLE);
-	Servo_setAngle(Servo_FORWARD_BACKWARD, (FORWARD_MOST_ANGLE + BACK_MOST_ANGLE) / 2);
-	Servo_setAngle(Servo_UP_DOWN, (UP_MOST_ANGLE + DOWN_MOST_ANGLE) / 2);
+	setAngle(Servo_RIGHT_LIFT_Rotation, (RIGHT_MOST_ANGLE + LEFT_MOST_ANGLE) / 2);
+	setAngle(Servo_GRABBER, RELEASE_MOST_ANGLE);
+	setAngle(Servo_FORWARD_BACKWARD, (FORWARD_MOST_ANGLE + BACK_MOST_ANGLE) / 2);
+	setAngle(Servo_UP_DOWN, (UP_MOST_ANGLE + DOWN_MOST_ANGLE) / 2);
 }
 
 void setAngle(ServoID_t servo_ID, u8 targetAngle) {
@@ -160,11 +168,11 @@ void setAngle(ServoID_t servo_ID, u8 targetAngle) {
 	  return;
   }
   else {
-	  arrServoLastValue[servo_ID]=currentAngle;
+	  arrServoLastValue[servo_ID]=targetAngle;
 	  s8 step = (targetAngle > currentAngle) ? 1 : -1;
 	  for (u8 angle = currentAngle; angle != targetAngle; angle += step) {
 		  Servo_setAngle(servo_ID,angle);
-	      _delay_ms(1);
+	      _delay_ms(8);
 	  }
 	  Servo_setAngle(servo_ID,targetAngle);
 	  return;
