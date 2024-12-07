@@ -21,7 +21,7 @@ static void (*TIMER1_callback)(void) = NULL;
 void TIMER1_Init(Count_Mode Copy_Direction , u16 Copy_u16Prescaler)
 {
 	TIMER1->CR1 = 0;
-	SET_BIT(TIMER1->CR1,7); /* Auto reload pre-load enable */
+	CLR_BIT(TIMER1->CR1,7); /* Auto reload pre-load enable */
 	TIMER1->CR1 |= ((Copy_Direction) << 4); /* Set the direction up or down */
 	TIMER1->PSC = ( Copy_u16Prescaler - 1 ) ;
 }
@@ -32,35 +32,34 @@ void TIMER1_InitPwmChannel(PWM_CHANNEL Copy_PwmChannel)
 	{
 	case TIMER1_PWM_CHANNEL1:
 		SET_BIT(TIMER1->CCMR1,3);
-		CLR_BIT(TIMER1->CCMR1,0);  /* Channel is output compare */ /* Output compare preload enable */
-		CLR_BIT(TIMER1->CCMR1,1);  /* Channel is output compare */ /* Output compare preload enable */
-		TIMER1->CCMR1 |= (0b111 << 4); /* PWM mode 2 */
+		TIMER1->CCMR1&= ~(0b11); /* Channel is output compare */ /* Output compare preload enable */
+		TIMER1->CCMR1 |= (0b110 << 4); /* PWM mode 1 */
 		CLR_BIT(TIMER1->CCER,1); /* high output polarity */
-		SET_BIT(TIMER1->CCER,0); /* Output enable */
+		CLR_BIT(TIMER1->CCER,0); /* Output enable */
 		break;
 
 	case TIMER1_PWM_CHANNEL2:
 		TIMER1->CCMR1 &= ~(0b11<<8);
 		SET_BIT(TIMER1->CCMR1,11);
-		TIMER1->CCMR1 |= (0b111 << 12);
+		TIMER1->CCMR1 |= (0b110 << 12);
 		CLR_BIT(TIMER1->CCER,5);
-		SET_BIT(TIMER1->CCER,4);
+		CLR_BIT(TIMER1->CCER,4);
 		break;
 
 	case TIMER1_PWM_CHANNEL3:
 		TIMER1->CCMR2 &= ~(0b11);
 		SET_BIT(TIMER1->CCMR2,3);
-		TIMER1->CCMR2 |= (0b111 << 4);
+		TIMER1->CCMR2 |= (0b110 << 4);
 		CLR_BIT(TIMER1->CCER,9);
-		SET_BIT(TIMER1->CCER,8);
+		CLR_BIT(TIMER1->CCER,8);
 		break;
 
 	case TIMER1_PWM_CHANNEL4:
 		TIMER1->CCMR2 &= ~(0b11<<8);
 		SET_BIT(TIMER1->CCMR2,11);
-		TIMER1->CCMR2 |= (0b111 << 12);
+		TIMER1->CCMR2 |= (0b110 << 12);
 		CLR_BIT(TIMER1->CCER,13);
-		SET_BIT(TIMER1->CCER,12);
+		CLR_BIT(TIMER1->CCER,12);
 		break;
 	}
 
@@ -70,10 +69,10 @@ void TIMER1_SetPWM_FREQ(PWM_CHANNEL Copy_PwmChannel , u32 Copy_PwmFrequency , u8
 {
 	if( Copy_PwmDutyCycle < 101)
 	{	//							((8000000/(10000*1)*100)-1
-	    u16 ARR_Value = ((u16)(u64)(F_CPU /((u64)Copy_PwmFrequency *(TIMER1->PSC + 1))) - 1);
+	    u16 ARR_Value = ((u64)(F_CPU /((u64)Copy_PwmFrequency *(TIMER1->PSC + 1))) - 1);
 	    u16 CCR_Value;
 	    if(Copy_PwmDutyCycle!=0){
-	    	CCR_Value = ((u16)(((u64)Copy_PwmDutyCycle * (ARR_Value + 1)) / 100)-1);
+	    	CCR_Value = ((((u64)Copy_PwmDutyCycle * (ARR_Value + 1)) / 100)-1);
 	    }
 	    else{
 	    	CCR_Value=0;
@@ -92,7 +91,7 @@ void TIMER1_SetPWM_FREQ(PWM_CHANNEL Copy_PwmChannel , u32 Copy_PwmFrequency , u8
 }
 void TIMER1_SetFREQ(PWM_CHANNEL Copy_PwmChannel , u32 Copy_PwmFrequency)
 {
-	    u16 ARR_Value = (u16)((u64)(F_CPU /((u64)Copy_PwmFrequency *(TIMER1->PSC + 1))) - 1);
+	    u16 ARR_Value = ((u64)(F_CPU /((u64)Copy_PwmFrequency *(TIMER1->PSC + 1))) - 1);
 	    if(Copy_PwmChannel>=TIMER1_PWM_CHANNEL1 && Copy_PwmChannel<=TIMER1_PWM_CHANNEL4){
 			TIMER1->ARR = ARR_Value ; 																								/* Setup Frequency */
 			SET_BIT(TIMER1->BDTR,15); 																						/* Enable MOE */

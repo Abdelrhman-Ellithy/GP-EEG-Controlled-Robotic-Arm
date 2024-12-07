@@ -3,12 +3,9 @@
 #include "HAL/Servo/Servo_private.h"
 #include "MCAL/GPIO/GPIO_interface.h"
 #include "MCAL/TIMER1/TIMER1_interface.h"
-
-
 void SERVO_Init(ServoID_t  servo){
 	TIMER1_InitPwmChannel(servo);
 	TIMER1_SetFREQ(servo,SERVO_FREQUENCY);
-	TIMER1_SetARRValue(39999);
 	Servo_setAngle(servo,0);
 }
 

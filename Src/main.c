@@ -79,11 +79,11 @@ int main(void)
 		RCC_PeripheralClk(RCC_DMA1, RCC_Enable);
 		GPIO_PORT_voidInit();
 		TIMER1_Init(TIMER1_COUNT_UP,4);
+		NVIC_Init();
+		SERVO_Init(SERVO_4);
 		SERVO_Init(SERVO_1);
 		SERVO_Init(SERVO_2);
 		SERVO_Init(SERVO_3);
-		SERVO_Init(SERVO_4);
-		NVIC_Init();
 		UART_Init();
 		DMA_voidChannelInit(DMA_CHANNEL6,
 							DMA_PRIORITY_HIGH,
@@ -103,7 +103,6 @@ int main(void)
 		EEG_CMD=INIT_STATE;
 		solveCMD();
 		while(1){
-
 		}
 }
 
@@ -161,20 +160,26 @@ void returnToInitialState() {
 	setAngle(Servo_UP_DOWN, (UP_MOST_ANGLE + DOWN_MOST_ANGLE) / 2);
 }
 
-void setAngle(ServoID_t servo_ID, u8 targetAngle) {
-
-  u8 currentAngle = arrServoLastValue[servo_ID];
+void setAngle(uint16_t servo_ID, uint8_t targetAngle) {
+  uint8_t currentAngle = arrServoLastValue[servo_ID];
   if (currentAngle == targetAngle){
 	  return;
   }
   else {
 	  arrServoLastValue[servo_ID]=targetAngle;
-	  s8 step = (targetAngle > currentAngle) ? 1 : -1;
-	  for (u8 angle = currentAngle; angle != targetAngle; angle += step) {
-		  Servo_setAngle(servo_ID,angle);
-	      _delay_ms(8);
-	  }
-	  Servo_setAngle(servo_ID,targetAngle);
-	  return;
+	    if (targetAngle > currentAngle) {
+	        for (uint8_t angle = currentAngle; angle < targetAngle; angle++) {
+	            Servo_setAngle(servo_ID, angle);
+	            _delay_ms(4);
+	        }
+	    }
+	    else {
+	        for (uint8_t angle = currentAngle; angle > targetAngle; angle--) {
+	            Servo_setAngle(servo_ID, angle);
+	            _delay_ms(4);
+	        }
+	    }
+	    Servo_setAngle(servo_ID, targetAngle);
+	    return;
   }
 }
